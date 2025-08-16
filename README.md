@@ -5,7 +5,7 @@ A professional, modern infographic-style workflow diagram for a Web3-powered for
 ## 🌐 Repository
 
 - **GitHub**: [https://github.com/GauravPawar101/footprint](https://github.com/GauravPawar101/footprint)
-- **Live Demo**: Access at `http://localhost:5174` after setup
+- **Live Demo**: Access at `http://localhost:5173` after setup
 
 ## 🚀 Features
 
@@ -39,20 +39,37 @@ A professional, modern infographic-style workflow diagram for a Web3-powered for
 ```
 Frontend/
 ├── public/                 # Static assets
+│   ├── favicon.svg
+│   ├── logo.svg
+│   └── vite.svg
 ├── src/
-│   ├── components/         # TypeScript classes
-│   │   ├── EvidenceVaultApp.ts       # Main application class
-│   │   ├── WorkflowRenderer.ts       # Renders workflow steps
-│   │   ├── InteractionManager.ts     # Handles user interactions
-│   │   └── AnimationEngine.ts        # Manages animations
-│   ├── types/              # TypeScript type definitions
-│   │   └── WorkflowTypes.ts          # Interface definitions
+│   ├── pages/              # Page components
+│   │   ├── AccessPage-simple.ts
+│   │   ├── AccessPage.ts
+│   │   ├── AdminPage-simple.ts
+│   │   ├── AdminPage.ts
+│   │   ├── BasePage.ts
+│   │   ├── CapturePage-new.ts
+│   │   ├── CapturePage.ts
+│   │   ├── CrimeScenePage-new.ts
+│   │   ├── CrimeScenePage.ts
+│   │   ├── HomePage-new.ts
+│   │   ├── HomePage.ts
+│   │   ├── StoragePage-simple.ts
+│   │   ├── StoragePage.ts
+│   │   ├── VerificationPage-simple.ts
+│   │   └── VerificationPage.ts
+│   ├── router/             # Routing system
+│   │   ├── Router.ts
+│   │   ├── routes.ts
+│   │   └── SimpleRouter.ts
 │   ├── main.ts             # Application entry point
-│   └── style.css           # Modern CSS with animations
+│   ├── style.css           # Modern CSS with animations
+│   ├── style-optimized.css # Optimized styles
+│   └── vite-env.d.ts       # Vite type definitions
 ├── index.html              # Main HTML template
 ├── package.json            # Dependencies and scripts
 ├── tsconfig.json           # TypeScript configuration
-├── vite.config.js          # Vite configuration
 └── README.md              # This file
 ```
 
@@ -93,17 +110,9 @@ npm run preview
 #### Navigation
 
 - **View**: Open http://localhost:5173 in your browser
-- **Navigate**: Use arrow keys (↑/↓) or j/k keys to move between steps
-- **Highlight**: Press Enter or Space to highlight current step
-- **Jump**: Use Home/End keys to go to first/last step
-- **Help**: Click the ❓ button for navigation guide
-
-#### Presentation Mode
-
-1. Open in fullscreen (F11)
-2. Use keyboard navigation for smooth step transitions
-3. Click "📱 Export" to print or save
-4. Hover over elements for interactive tooltips
+- **Navigate**: Use routing system to move between different pages
+- **Pages**: Access different workflow stages through the page system
+- **Interactive**: Each page provides specific workflow functionality
 
 ## 🎨 Customization
 
@@ -119,34 +128,18 @@ Modify CSS custom properties in `src/style.css`:
 }
 ```
 
-### Workflow Content
+### Adding New Pages
 
-Update step data in `src/components/EvidenceVaultApp.ts`:
-
-```typescript
-private workflowSteps: WorkflowStep[] = [
-  {
-    id: 1,
-    title: 'Your Step Title',
-    description: 'Step description...',
-    icon: '🔗',
-    technologies: ['Tech1', 'Tech2']
-  }
-]
-```
-
-### Adding New Features
-
-- **New Components**: Add to `src/components/`
-- **Types**: Define in `src/types/WorkflowTypes.ts`
+- **New Pages**: Add to `src/pages/`
+- **Routing**: Update `src/router/routes.ts`
 - **Styles**: Add to `src/style.css` using CSS custom properties
 
 ## 🛠 Technology Stack
 
 - **Frontend**: Vite + TypeScript
 - **Styling**: Modern CSS with custom properties
-- **Animations**: CSS keyframes and transforms
-- **Architecture**: Object-oriented TypeScript classes
+- **Architecture**: Page-based TypeScript classes
+- **Routing**: Custom TypeScript router system
 - **Build Tool**: Vite for fast development and optimized builds
 
 ## 📱 Browser Compatibility
@@ -206,19 +199,25 @@ This project is designed for educational and presentation purposes. Feel free to
 
 ### Future Enhancements
 
-- [ ] Add more animation presets
+- [ ] Enhanced page transitions and animations
 - [ ] Theme switcher (light/dark mode)
 - [ ] Integration with real blockchain networks
 - [ ] Advanced evidence management features
 - [ ] Mobile responsive design improvements
+- [ ] Export to PDF functionality
+- [ ] Interactive demo mode
+- [ ] Multi-language support
+- [ ] Custom page templates
 
 ## 🚀 Deployment
 
 ### Prerequisites
+
 - Node.js 18+ and npm
 - Git
 
 ### Quick Setup
+
 ```bash
 # Clone the repository
 git clone https://github.com/GauravPawar101/footprint.git
@@ -231,10 +230,11 @@ npm install
 npm run dev
 
 # Open in browser
-# Navigate to http://localhost:5174
+# Navigate to http://localhost:5173
 ```
 
 ### Production Build
+
 ```bash
 # Build for production
 npm run build
@@ -244,22 +244,30 @@ npm run preview
 ```
 
 ### Repository Structure
+
 ```
 Frontend/
 ├── src/
-│   ├── pages/           # Page components
-│   ├── router/          # Routing system
-│   ├── main.ts         # Entry point
-│   └── style.css       # Styles
-├── public/             # Static assets
-├── package.json        # Dependencies
-└── README.md          # This file
+│   ├── pages/              # Page components for workflow stages
+│   │   ├── HomePage.ts     # Landing page
+│   │   ├── CrimeScenePage.ts # Crime scene management
+│   │   ├── CapturePage.ts  # Evidence capture
+│   │   ├── StoragePage.ts  # Evidence storage
+│   │   ├── AccessPage.ts   # Role-based access
+│   │   ├── VerificationPage.ts # Evidence verification
+│   │   └── AdminPage.ts    # Admin functionality
+│   ├── router/             # Routing system
+│   │   ├── Router.ts       # Main router
+│   │   ├── SimpleRouter.ts # Simplified routing
+│   │   └── routes.ts       # Route definitions
+│   ├── main.ts             # Entry point
+│   ├── style.css           # Styles
+│   └── style-optimized.css # Optimized styles
+├── public/                 # Static assets
+├── package.json            # Dependencies
+└── README.md              # This file
 ```
 
 ---
 
 **SecureChain EvidenceVault** - Securing digital evidence with blockchain technology
-- [ ] Export to PDF functionality
-- [ ] Interactive demo mode
-- [ ] Multi-language support
-- [ ] Custom step templates
