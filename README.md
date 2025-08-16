@@ -2,6 +2,11 @@
 
 A professional, modern infographic-style workflow diagram for a Web3-powered forensic evidence management system built with Vite and TypeScript.
 
+## 🌐 Repository
+
+- **GitHub**: [https://github.com/GauravPawar101/footprint](https://github.com/GauravPawar101/footprint)
+- **Live Demo**: Access at `http://localhost:5174` after setup
+
 ## 🚀 Features
 
 ### Design & Visual Elements
@@ -203,6 +208,57 @@ This project is designed for educational and presentation purposes. Feel free to
 
 - [ ] Add more animation presets
 - [ ] Theme switcher (light/dark mode)
+- [ ] Integration with real blockchain networks
+- [ ] Advanced evidence management features
+- [ ] Mobile responsive design improvements
+
+## 🚀 Deployment
+
+### Prerequisites
+- Node.js 18+ and npm
+- Git
+
+### Quick Setup
+```bash
+# Clone the repository
+git clone https://github.com/GauravPawar101/footprint.git
+cd footprint
+
+# Install dependencies
+npm install
+
+# Start development server
+npm run dev
+
+# Open in browser
+# Navigate to http://localhost:5174
+```
+
+### Production Build
+```bash
+# Build for production
+npm run build
+
+# Preview production build
+npm run preview
+```
+
+### Repository Structure
+```
+Frontend/
+├── src/
+│   ├── pages/           # Page components
+│   ├── router/          # Routing system
+│   ├── main.ts         # Entry point
+│   └── style.css       # Styles
+├── public/             # Static assets
+├── package.json        # Dependencies
+└── README.md          # This file
+```
+
+---
+
+**SecureChain EvidenceVault** - Securing digital evidence with blockchain technology
 - [ ] Export to PDF functionality
 - [ ] Interactive demo mode
 - [ ] Multi-language support
